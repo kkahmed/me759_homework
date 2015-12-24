@@ -1,0 +1,6 @@
+include(../ParallelUtils.cmake)
+enable_cuda_support()
+SET(CUDA_NVCC_FLAGS -use_fast_math; --ptxas-options=-v; -gencode arch=compute_52,code=sm_52)
+#SET(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_20,code=sm_20)
+cuda_add_executable(hw04p02 hw04p02.cu)
+cuda_add_executable(matrixadd matrixadd.cu)
