@@ -1,0 +1,5 @@
+include(../../ParallelUtils.cmake)
+enable_cuda_support()
+SET(CUDA_NVCC_FLAGS -use_fast_math; --ptxas-options=-v; -gencode arch=compute_52,code=sm_52)
+#SET(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_20,code=sm_20)
+cuda_add_executable(2Dconvolution 2Dconvolution.cu)
